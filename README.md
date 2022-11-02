@@ -1,108 +1,151 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Spooky Halloween
+  
 
-Welcome USER_NAME,
+**Welcome to [Spooky Halloween](https://luinen.github.io/Halloweenquiz/)!**
+  
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Spooky Halloween is a Halloween-related quiz game. This small game gives you 5 minutes of fun for people who like exciting facts and want to learn something new. Here's an excellent chance to prove to your relatives that you are the smartest and luckiest family member.  The game is simple and enjoyable. Who will be the first on the leaderboard?
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![responsive_pic](assets/images/amiresponsive.png)
 
-## Gitpod Reminders
+## Features
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+I explain the website features below.
 
-`python3 -m http.server`
+### **Existing features**
+  
 
-A blue button should appear to click: _Make Public_,
+- **Main menu**
+  - A solid page with Halloween style, there are three options. If you click on the start button, the game will start. 
+  - If the users want to know more about the instructions, they can click on the rules button. 
+  - And finally, the users can see the leaderboard if they click the high scores button.
+  - The active button appears with black border and purple box shadow , which highlights it from the background.
 
-Another blue button should appear to click: _Open Browser_.
+  ![main_menu](assets/images/main_menu.png)
+  ![instructions](assets/images/instructions.png)
+  ![leaderboard](assets/images/emptyleaderboard.png)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- **4 choices**
+  - You can choose four different answers, and the active answer works the same as the main menu buttons.
 
-A blue button should appear to click: _Make Public_,
+![choices](assets/images/choices.png)
 
-Another blue button should appear to click: _Open Browser_.
+  - If you choose the good answer, the background of the answer will be green.
+  
+![correctanswer](assets/images/correctanswer.png)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+  - But if you choose the wrong answer, it will be red.
 
-To log into the Heroku toolbelt CLI:
+![wronganswer](assets/images/wronganswer.png)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- **Score**
+  - The user receives 100 points for each correct answer. Wrong answers don't give you points, and you can't get more than 1000 points.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![score](assets/images/score.png)
 
-------
+- **Game Over page**
+  - At the end of the quiz, the users can save their high score and enter their name, play again, or go back to the main menu. The form is easy to use and the placeholder helps the users.  
 
-## Release History
+![gameover](assets/images/gameover.png)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- **Leaderboard**
+  - This part shows the saved usernames with their scores. The lowest points are at the bottom of the page, and the highest points are at the top.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![leaderboard2](assets/images/leaderboard.png)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### **Features left to implement**
+- I think a timer or a countdown would be a good idea to add to this quiz
+- I want to add a progress bar next to the score
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Testing
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+  - The game works as intended. 
+  - The scoring system is okay, it gives you 100 points for each correct answer. 
+  - I tested each button and answers.
+  - You have to fill out the username if you want to save your result. 
+  - Responsiveness is good enough for every platform. 
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+#### **Lighthouse testing**
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+I used lighthouse to check the performance of my home page for mobile devices and desktop. The first time running the lighthouse, my SEO value was 80. After I added 'meta', the figures increased.
+- Desktop version
+![lighthouse_desktop](assets/images/lighthousedesktop.png)
+- Mobile version
+ ![lighthouse_mobile](assets/images/lighthousemobile.png)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+#### **Validator Testing**
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- **HTML**
+  - First time running the html validator I got 1 error, 1 info and 1 warning message: 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+  ![imagespace](assets/images/htmlimagespace.png)
+  - I renamed the image that fixed the issue.
+  ![inputslash](assets/images/htmlinputslash.png)
+  - deleted the slash end of the input
+  ![htmlsection](assets/images/htmlsection.png)
+  - and deleted the section, because it was unnecessary.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+  - After these mistakes were fixed, no errors were returned when passing through the official [W3c validator](https://validator.w3.org/)
+- **CSS**
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+  - First time running the css validator I got 2 errors and 1 warning message: 
+![cssfamily](assets/images/cssfamilynames.png)
+  - I deleted the space and I used quotes, and the problem solved.
+    ```
+    font-family:"Playfair Display", sans-serif;
+    ```
+    
+![csserrors](assets/images/csserrors.png)
+  - I changed 'not-allowed' to 'none' and I deleted the unnecessary font-size.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+  - After these mistakes were fixed, no errors were returned when passing through the official [Jigsaw](https://jigsaw.w3.org/)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- **JS**
+  - I tested my codes continuously with the JS validator during my work. I made many mistakes. For example, I often used the wrong keyword when I defined variables(let and const).
+  - I forgot to call the function
+  - missing or unnecessary semicolons
+  - The quiz has 10 questions, but after a couple of questions the game froze. 
+  ```
+  questionIndex = Math.floor(Math.random() * 10
+  ```
+  - After i change the '10' to 'availableQuesions.length' it solved the problem
 
-------
+  ```
+  questionIndex = Math.floor(Math.random() * availableQuesions.length
+  ```
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+![jsvalidator](assets/images/jsvalidator.png)
+  - After these mistakes were fixed, no errors were returned when passing through the official [JS validator](https://jshint.com/)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+#### 
 
-**How will this affect me?**
+## Deployment  
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  1. In the GitHub repository, navigate to the Settings tab.
+  2. From the source section drop-down menu, select the Master Branch.
+  3. Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+  4. The live link can be found here: https://luinen.github.io/Halloweenquiz/
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- If you want to clone the repository:
+  1. In the GitHub repository, click on the 'Code'.
+  2. Click 'Open with GitHub Desktop' to clone and open the repository with GitHub Desktop.
+  3. Click 'Choose...' and, using the Finder window, navigate to a local path where you want to clone the repository. 
+  4. Click Clone.  
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
 
-**So….?**
+## Credits
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+#### Content
 
-**Can I opt out?**
+- The questions for the quiz were taken from [Parade](https://parade.com/1066846/jessicasager/halloween-trivia/).
+- Instructions of the container were taken from  [Web Dev Simplified](https://www.youtube.com/c/WebDevSimplified)
+- The idea of the rules was taken from [CodingNepal](https://www.youtube.com/c/CodingNepal)
+- Start the game and get new question function tutorial by [James Q Quick](https://www.youtube.com/c/JamesQQuick)
+- Highscore function and local store save by [Brian Design](https://www.youtube.com/channel/UCsKsymTY_4BYR-wytLjex7A) was great.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+#### Media 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+- The pumpkin image was taken from [Dribble](https://dribbble.com/). 
